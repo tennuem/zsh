@@ -1,13 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export GOROOT=/usr/local/Cellar/go/1.13/libexec
-export GOPATH=/Users/tennuem/go
-#export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH::$GOPATH/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/tennuem/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -69,12 +64,32 @@ ZSH_THEME="bira"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  brew
   zsh-syntax-highlighting
+  golang
+  node
+  python
+  docker
+  docker-compose
+  vscode
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+# systtem
+export PATH=$PATH:/usr/local/sbin
+
+# golang
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
+
+# javascript
+export NVM_DIR=$HOME/.nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" 
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
